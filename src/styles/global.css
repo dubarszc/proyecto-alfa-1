@@ -1,0 +1,54 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: unset;
+    padding: unset;
+    border: unset;
+    outline: unset;
+}
+
+/* Base styles */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #1e1e1e;
+    min-height: 100vh;
+}
+
+
+
+/* Links */
+a {
+    color: #1e1e1e;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+/* Forms */
+input, textarea, select {
+    font: inherit;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
