@@ -1,27 +1,29 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Tarjeta from "../components/Tarjeta.astro";
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	 <!-- heroSection -->
-    <div> 
+    <!-- heroSection -->
+    <div>
         <!--Frame 27-->
         <div>
             <!--Frame 5-->
             <div>
-                <p>Todo para el tatuador Venezolano: Productos de Calidad y Formacion Profesional</p>
+                <p>
+                    Todo para el tatuador Venezolano: Productos de Calidad y
+                    Formacion Profesional
+                </p>
             </div>
             <!--Frame 6-->
             <div>
                 <form action="">
-                    <button>
-
-                    </button>
-                    <input type="text" placeholder="Buscar Categorias">
+                    <button> </button>
+                    <input type="text" placeholder="Buscar Categorias" />
                 </form>
             </div>
             <!--Frame 11-->
@@ -45,19 +47,19 @@ import Layout from '../layouts/Layout.astro';
             <!--Frame 25-->
             <div>
                 <!--Frame 19-->
-              <div>
-                <img src="" alt="">
-              </div>
-              <!--Caracteristicas-->
-              <div>
-                <p>pistola para tatuar</p>
-              </div>
+                <div>
+                    <img src="" alt="" />
+                </div>
+                <!--Caracteristicas-->
+                <div>
+                    <p>pistola para tatuar</p>
+                </div>
             </div>
             <!--Frame 21-->
             <div>
                 <!--Frame 19-->
                 <div>
-                    <img src="" alt="">
+                    <img src="" alt="" />
                 </div>
                 <!--caracteristicas-->
                 <div>
@@ -66,9 +68,9 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <!--Frame 26-->
             <div>
-                 <!--Frame 19-->
+                <!--Frame 19-->
                 <div>
-                    <img src="" alt="">
+                    <img src="" alt="" />
                 </div>
                 <!--caracteristicas-->
                 <div>
@@ -81,93 +83,44 @@ import Layout from '../layouts/Layout.astro';
     <div>
         <!--Frame 13-->
         <div>
-            <p>Conviértete en un Artista del Tatuaje en Venezuela: Insumos Profesionales y Aprendizaje Integral.</p>
+            <p>
+                Conviértete en un Artista del Tatuaje en Venezuela: Insumos
+                Profesionales y Aprendizaje Integral.
+            </p>
             <!--Frame 14-->
             <div>
-               <!--Frame 15--> 
-               <div>
-                <p>La habilidad que cambiará tu vida te espera. ¡Inscríbete hoy y comienza a construir tu camino como tatuador!</p>
-                <!--Frame 16 -->
+                <!--Frame 15-->
                 <div>
-                    <button></button>
-                    <button></button>
+                    <p>
+                        La habilidad que cambiará tu vida te espera. ¡Inscríbete
+                        hoy y comienza a construir tu camino como tatuador!
+                    </p>
+                    <!--Frame 16 -->
+                    <div>
+                        <button></button>
+                        <button></button>
+                    </div>
                 </div>
-            </div>
-            <!--Ellipse 1 -->
-            <div>
-                <img src="" alt="">
-            </div>
+                <!--Ellipse 1 -->
+                <div>
+                    <img src="" alt="" />
+                </div>
             </div>
         </div>
     </div>
     <!--Top-Productos-->
     <div>
-            <!--Frame 17-->
-            <div>
-                <p>Las mejores Productos</p>
-            </div>
-            <!--Frame 24-->
-            <div>
-                <!--Frame 21-->
-                <div>
-                    <!--Frame 19-->
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                    <!--caracteristicas-->
-                    <div>
-                        <!--caracteristicas del procucto -->
-                        <div>
-                            <h3>Pistola para tatuar</h3>
-                            <p>Precio:</p>
-                            <p>Stock:</p>
-                        </div>
-                        <!--boton comprar -->
-                        <div>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-                </div>
-                <!--Frame 22-->
-                <div>
-                    <!--Frame 19-->
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                    <!--caracteristicas-->
-                    <div>
-                         <!--caracteristicas del procucto -->
-                        <div>
-                            <h3>Pistola para tatuar</h3>
-                            <p>Precio:</p>
-                            <p>Stock:</p>
-                        </div>
-                        <!--boton comprar -->
-                        <div>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-                </div>
-                <!--Frame 23-->
-                <div>
-                    <!--Frame 19-->
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                    <!--caracteristicas-->
-                    <div>
-                         <!--caracteristicas del procucto -->
-                        <div>
-                            <h3>Pistola para tatuar</h3>
-                            <p>Precio:</p>
-                            <p>Stock:</p>
-                        </div>
-                        <!--boton comprar -->
-                        <div>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-                </div>
+        <!--Frame 17-->
+        <div>
+            <p>Las mejores Productos</p>
+        </div>
+        <!--Frame 24-->
+        <div>
+
+            <Tarjeta title="producto1" description="descripcion1" price={5}></Tarjeta>
+            <Tarjeta title="producto2" description="descripcion2" price={10}></Tarjeta>
+            <Tarjeta title="producto3" description="descripcion3" price={15}></Tarjeta>
+
         </div>
     </div>
     <!--Footer-->
@@ -176,6 +129,11 @@ import Layout from '../layouts/Layout.astro';
         <div>
             <p>fotter</p>
             <p>Desarrolado por dubar zambranoo</p>
+            <div class="red-sociales">
+                <Icon name="mdi:instagram" />
+                <Icon name="mdi:facebook" />
+                <Icon name="mdi:telegram" />
+            </div>
         </div>
     </div>
 </Layout>
