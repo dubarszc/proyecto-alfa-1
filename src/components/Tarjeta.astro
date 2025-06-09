@@ -5,7 +5,7 @@ interface Props {
     price: number;
 
 }
-const {} = Astro.props;
+const { title, price, description } = Astro.props;
 ---
 <div>
     <!--Frame 19-->
@@ -16,9 +16,9 @@ const {} = Astro.props;
     <div>
         <!--caracteristicas del procucto -->
         <div>
-            <h3>Pistola para tatuar</h3>
-            <p>Precio:</p>
-            <p>Stock:</p>
+            <h3>{title}</h3>
+            <p>Precio: {price}</p>
+            <p>{description}</p>
         </div>
         <!--boton comprar -->
         <div>

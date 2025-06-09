@@ -3,6 +3,24 @@ import Tarjeta from "../components/Tarjeta.astro";
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 
+const products = [
+    {
+        title: 'Titutlo 1',
+        description: 'lorem ipsum lorem uipsum',
+        price: 8
+    },
+    {
+        title: 'Titutlo 2',
+        description: 'lorem ipsum lorem uipsum',
+        price: 8
+    },
+    {
+        title: 'Titutlo 3',
+        description: 'lorem ipsum lorem uipsum',
+        price: 8
+    },
+]
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -13,7 +31,7 @@ import { Icon } from "astro-icon/components";
         <!--Frame 27-->
         <div>
             <!--Frame 5-->
-            <div>
+            <div class="hero-section-title">
                 <p>
                     Todo para el tatuador Venezolano: Productos de Calidad y
                     Formacion Profesional
@@ -27,7 +45,7 @@ import { Icon } from "astro-icon/components";
                 </form>
             </div>
             <!--Frame 11-->
-            <div>
+            <div class="hero-section">
                 <p>Mas populares...</p>
                 <button>Categoria principal</button>
                 <button>Categoria principal</button>
@@ -116,10 +134,12 @@ import { Icon } from "astro-icon/components";
         </div>
         <!--Frame 24-->
         <div>
+            {
+                products.map(product => (
 
-            <Tarjeta title="producto1" description="descripcion1" price={5}></Tarjeta>
-            <Tarjeta title="producto2" description="descripcion2" price={10}></Tarjeta>
-            <Tarjeta title="producto3" description="descripcion3" price={15}></Tarjeta>
+                    <Tarjeta title={product.title} description={product.description} price={product.price}></Tarjeta>
+                ))
+            }
 
         </div>
     </div>
@@ -137,3 +157,36 @@ import { Icon } from "astro-icon/components";
         </div>
     </div>
 </Layout>
+
+<style>
+    .hero-section-title{
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        padding: 5% 20% ;
+        background-color: #f8f9fa;
+        font-size: 4rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .hero-section button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #1e1e1e;
+        color: white;
+        
+        border-radius: 5px;
+        border-bottom: 1px solid #1e1e1e;
+    }
+
+    .red-sociales {
+        display: flex;
+        gap: 10px;
+    }
