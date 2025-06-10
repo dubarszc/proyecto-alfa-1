@@ -1,7 +1,23 @@
 ---
+import Categorias from "../components/categorias.astro";
 import Tarjeta from "../components/Tarjeta.astro";
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+
+const Categori= [
+    {
+        title: 'Titutlo 1',
+    },
+
+    {
+        title: 'Titutlo 2',
+    },
+
+    {
+        title: 'Titutlo 3',
+    },
+]
+
 
 const products = [
     {
@@ -21,6 +37,7 @@ const products = [
     },
 ]
 
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -38,73 +55,52 @@ const products = [
                 </p>
             </div>
             <!--Frame 6-->
+            
             <div>
-                <form action="">
-                    <button> </button>
-                    <input type="text" placeholder="Buscar Categorias" />
-                </form>
-            </div>
-            <!--Frame 11-->
-            <div class="hero-section">
-                <p>Mas populares...</p>
-                <button>Categoria principal</button>
-                <button>Categoria principal</button>
-                <button>Categoria principal</button>
-                <button>Categoria principal</button>
+                <div class="buscar-categorias">
+                    <form action="">
+                        <button> </button>
+                        <input type="text" placeholder="Buscar Categorias" />
+                    </form>
+                </div>
+                <!--Frame 11-->
+                <div class="hero-section">
+                    <p>Mas populares...</p>
+                    <button>Categoria principal</button>
+                    <button>Categoria principal</button>
+                    <button>Categoria principal</button>
+                    <button>Categoria principal</button>
+                </div>
             </div>
         </div>
     </div>
     <!--Top-categorias-->
     <div>
         <!--Frame 17-->
-        <div>
+        <div class="Titulos">
             <h2>Las mejores Categorias</h2>
         </div>
         <!--Frame 24-->
-        <div>
-            <!--Frame 25-->
-            <div>
-                <!--Frame 19-->
-                <div>
-                    <img src="" alt="" />
-                </div>
-                <!--Caracteristicas-->
-                <div>
-                    <p>pistola para tatuar</p>
-                </div>
-            </div>
-            <!--Frame 21-->
-            <div>
-                <!--Frame 19-->
-                <div>
-                    <img src="" alt="" />
-                </div>
-                <!--caracteristicas-->
-                <div>
-                    <p>pistola para tatuar</p>
-                </div>
-            </div>
-            <!--Frame 26-->
-            <div>
-                <!--Frame 19-->
-                <div>
-                    <img src="" alt="" />
-                </div>
-                <!--caracteristicas-->
-                <div>
-                    <p>pistola para tatuar</p>
-                </div>
-            </div>
+        <div class="Tarjetas">
+        {
+                Categori.map(categoria => (
+
+                    <Tarjeta title={categoria.title}></Tarjeta>
+                ))
+            }
+
+      
         </div>
     </div>
     <!--HeroSection2-->
-    <div>
+    <div class="HeroSection2">
         <!--Frame 13-->
-        <div>
+        <div class="titulo-2">
             <p>
                 Conviértete en un Artista del Tatuaje en Venezuela: Insumos
                 Profesionales y Aprendizaje Integral.
             </p>
+        </div>
             <!--Frame 14-->
             <div>
                 <!--Frame 15-->
@@ -115,25 +111,24 @@ const products = [
                     </p>
                     <!--Frame 16 -->
                     <div>
-                        <button></button>
-                        <button></button>
+                        <button class="boton-comprar">Inscribirse</button>
+                        <button class="boton-info">Mas info...</button>
                     </div>
                 </div>
                 <!--Ellipse 1 -->
                 <div>
-                    <img src="" alt="" />
-                </div>
+                    <img src="./img/img-1" alt="" />
             </div>
         </div>
     </div>
     <!--Top-Productos-->
     <div>
         <!--Frame 17-->
-        <div>
+        <div class="Titulos">
             <p>Las mejores Productos</p>
         </div>
         <!--Frame 24-->
-        <div>
+        <div class="Tarjetas">
             {
                 products.map(product => (
 
@@ -144,10 +139,9 @@ const products = [
         </div>
     </div>
     <!--Footer-->
-    <div>
         <!--Feame 25-->
-        <div>
-            <p>fotter</p>
+        <div class="footer">
+            <p>info que va en el footer</p>
             <p>Desarrolado por dubar zambranoo</p>
             <div class="red-sociales">
                 <Icon name="mdi:instagram" />
@@ -155,17 +149,41 @@ const products = [
                 <Icon name="mdi:telegram" />
             </div>
         </div>
-    </div>
+
+
 </Layout>
 
 <style>
+
+    .Tarjetas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10%;
+        justify-content: center;
+    }
+
+    .Titulos{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5% 20%;
+        background-color: #f8f9fa;
+        font-size: 2rem;
+    }
+
     .hero-section-title{
         display: flex; 
         align-items: center;
         justify-content: center;
-        padding: 5% 20% ;
+        padding: 8% 10% ;
         background-color: #f8f9fa;
-        font-size: 4rem;
+        font-size: 56PX;
+    }
+    .hero-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
     }
     
     .hero-section p {
@@ -173,17 +191,67 @@ const products = [
         margin-bottom: 10px;
     }
     
+        .buscar-categorias{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     .hero-section button {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 10px 20px;
         margin: 5px;
+        background-color: #EAEAEA;
+        color: #1e1e1e;
+        border-radius: 5px;
+       
+    }
+
+    .HeroSection2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5% 20%;
+        background-color: #EAEAEA;
+
+
+    }
+
+    .titulo-2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5% 20%;
+        background-color: #f8f9fa;
+        font-size: 2rem;
+    }
+
+    .boton-comprar{
+        
+        background-color: #277AFF;
+        color: #fff;
+        border-radius: 10px;
+        padding:  10px 15px;
+    }
+
+    .boton-info{
+        
+        background-color: #fff;
+        color: #1e1e1e;
+        border-radius: 10px;
+        padding:  10px 15px;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
         background-color: #1e1e1e;
         color: white;
-        
-        border-radius: 5px;
-        border-bottom: 1px solid #1e1e1e;
     }
 
     .red-sociales {
