@@ -15,12 +15,12 @@ const { title, price, description } = Astro.props;
             <img src="/img-5.png" alt="" />
         </div>
         <!--caracteristicas-->
-        <div>
+        <div class="items-caracteristicas">
             <!--caracteristicas del procucto -->
             <div class="caracteristicas-producto">
                 <h3>{title}</h3>
                 <p>Precio: {price}</p>
-                <p>{description}</p>
+                <p>Stock:{description}</p>
             </div>
             <!--boton comprar -->
             <div class="div-boton-comprar">
@@ -34,10 +34,18 @@ const { title, price, description } = Astro.props;
     <style>
 
     .items-producto{      
-        background-color: #9e9e9e;
+        background-color: #EAEAEA;
         margin-bottom: 10px;
         border-radius: 15px;
         width: 300px;
+    }
+
+    .items-caracteristicas{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 20px;
     }
     
     .img-producto{
