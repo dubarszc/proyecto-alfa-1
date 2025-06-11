@@ -1,19 +1,37 @@
 ---
 interface Props {
     title: string;
-
 }
-const { title} = Astro.props;
+const { title } = Astro.props;
 ---
 
-
-    <div class="items-producto">
-        <!--Frame 19-->
-        <div class="img-producto">
-            <img src="/img-5.png" alt="" />
-        </div>
-            <!--caracteristicas del procucto -->
-            <div class="caracteristicas-producto">
-                <h3>{title}</h3>
-            </div>
+<div class="items-producto">
+    <!--Frame 19-->
+    <div class="img-producto">
+        <img src="/img-5.png" alt="" />
     </div>
+    <!--caracteristicas del procucto -->
+    <div class="caracteristicas-producto">
+        <h3>{title}</h3>
+    </div>
+</div>
+
+
+<style>
+    .items-producto {
+        background-color: #EAEAEA;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        width: 300px;
+    }
+
+    .img-producto {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .caracteristicas-producto {
+        padding: 10px 20px;
+    }

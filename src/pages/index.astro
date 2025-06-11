@@ -1,45 +1,40 @@
 ---
-import Categorias from "../components/categorias.astro";
+import Categorias from "../components/Categorias.astro";
 import Tarjeta from "../components/Tarjeta.astro";
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 
-const Categori= [
+const Categori = [
     {
-        title: 'Titutlo 1',
+        title: "Titutlo 1",
     },
 
     {
-        title: 'Titutlo 2',
+        title: "Titutlo 2",
     },
 
     {
-        title: 'Titutlo 3',
+        title: "Titutlo 3",
     },
-
-]
-
+];
 
 const products = [
     {
-        title: 'Titutlo 1',
-        description: '30',
-        price: 8
+        title: "Titutlo 1",
+        description: "30",
+        price: 8,
     },
     {
-        title: 'Titutlo 2',
-        description: '30',
-        price: 8
+        title: "Titutlo 2",
+        description: "30",
+        price: 8,
     },
     {
-        title: 'Titutlo 3',
-        description: '30',
-        price: 8
+        title: "Titutlo 3",
+        description: "30",
+        price: 8,
     },
-
-    
-]
-
+];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -58,7 +53,7 @@ const products = [
                 </p>
             </div>
             <!--Frame 6-->
-            
+
             <div>
                 <div class="buscar-categorias">
                     <form action="">
@@ -85,14 +80,8 @@ const products = [
         </div>
         <!--Frame 24-->
         <div class="Tarjetas">
-        {
-                Categori.map(categoria => (
-
-                    <Tarjeta title={categoria.title}></Tarjeta>
-                ))
-            }
-
-      
+            {
+                Categori.map((cate) => (<Categorias title={cate.title} />))}
         </div>
     </div>
     <!--HeroSection2-->
@@ -104,60 +93,59 @@ const products = [
                 Profesionales y Aprendizaje Integral.
             </p>
         </div>
-            <!--Frame 14-->
-            <div>
-                <!--Frame 15-->
-                <div>
-                    <p>
-                        La habilidad que cambiará tu vida te espera. ¡Inscríbete
-                        hoy y comienza a construir tu camino como tatuador!
-                    </p>
-                    <!--Frame 16 -->
-                    <div>
-                        <button class="boton-comprar">Inscribirse</button>
-                        <button class="boton-info">Mas info...</button>
-                    </div>
+        <!--Frame 14-->
+        <div class="hero-section-items">
+            <!--Frame 15-->
+            <div class="hero-section-items-text">
+                <p>
+                    La habilidad que cambiará tu vida te espera. ¡Inscríbete hoy
+                    y comienza a construir tu camino como tatuador!
+                </p>
+                <!--Frame 16 -->
+                <div class="hero-section-items-buttons">
+                    <button class="boton-comprar">Inscribirse</button>
+                    <button class="boton-info">Mas info...</button>
                 </div>
-                <!--Ellipse 1 -->
-                <div>
-                    <img src="./img/img-1" alt="" />
+            </div>
+            <!--Ellipse 1 -->
+            <div class="hero-section-img">
+                <img src="/img-1.jpg" alt="" />
             </div>
         </div>
     </div>
-    <!--Top-Productos-->
-    <div>
-        <!--Frame 17-->
-        <div class="Titulos">
-            <p>Las mejores Productos</p>
-        </div>
-        <!--Frame 24-->
-        <div class="Tarjetas">
-            {
-                products.map(product => (
-
-                    <Tarjeta title={product.title} description={product.description} price={product.price}></Tarjeta>
-                ))
-            }
-
-        </div>
-    </div>
-    <!--Footer-->
-        <!--Feame 25-->
-        <div class="footer">
-            <p>info que va en el footer</p>
-            <p>Desarrolado por dubar zambranoo</p>
-            <div class="red-sociales">
-                <Icon name="mdi:instagram" />
-                <Icon name="mdi:facebook" />
-                <Icon name="mdi:telegram" />
-            </div>
-        </div>
-
-
 </Layout>
+<!--Top-Productos-->
+<div>
+    <!--Frame 17-->
+    <div class="Titulos">
+        <p>Las mejores Productos</p>
+    </div>
+    <!--Frame 24-->
+    <div class="Tarjetas">
+        {
+            products.map((product) => (
+                <Tarjeta
+                    title={product.title}
+                    description={product.description}
+                    price={product.price}
+                />
+            ))
+        }
+    </div>
+</div>
+<!--Footer-->
+<!--Feame 25-->
+<div class="footer">
+    <p>info que va en el footer</p>
+    <p>Desarrolado por dubar zambranoo</p>
+    <div class="red-sociales">
+        <Icon name="mdi:instagram" />
+        <Icon name="mdi:facebook" />
+        <Icon name="mdi:telegram" />
+    </div>
+</div>
 
 <style>
-
     .Tarjetas {
         display: flex;
         flex-wrap: wrap;
@@ -166,7 +154,7 @@ const products = [
         margin-bottom: 20px;
     }
 
-    .Titulos{
+    .Titulos {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -175,41 +163,40 @@ const products = [
         font-size: 2rem;
     }
 
-    .hero-section-title{
-        display: flex; 
+    .hero-section-title {
+        display: flex;
         align-items: center;
         justify-content: center;
-        padding: 8% 10% ;
+        padding: 8% 10%;
         background-color: #f8f9fa;
-        font-size: 56PX;
+        font-size: 56px;
     }
-    .hero-section{
+    .hero-section {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 15px;
     }
-    
+
     .hero-section p {
         font-size: 1.2rem;
         margin-bottom: 10px;
     }
-    
-        .buscar-categorias{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+
+    .buscar-categorias {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .hero-section button {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 10px 20px;
         margin: 5px;
-        background-color: #EAEAEA;
+        background-color: #eaeaea;
         color: #1e1e1e;
         border-radius: 5px;
-       
     }
 
     .HeroSection2 {
@@ -218,34 +205,48 @@ const products = [
         align-items: center;
         justify-content: center;
         padding: 5% 20%;
-        background-color: #EAEAEA;
-
-
+        background-color: #eaeaea;
     }
 
     .titulo-2 {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 5% 20%;
-        background-color: #f8f9fa;
+        padding: 5% 10%;
         font-size: 2rem;
     }
 
-    .boton-comprar{
+    .hero-section-items {
+        display: flex;
+        align-items: center;
         
-        background-color: #277AFF;
-        color: #fff;
-        border-radius: 10px;
-        padding:  10px 15px;
     }
 
-    .boton-info{
-        
+    .hero-section-items-text{
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        max-width: 600px;
+    }
+
+    .hero-section-items-buttons{
+        display: flex;
+
+        gap: 10px;
+    }
+
+    .boton-comprar {
+        background-color: #277aff;
+        color: #fff;
+        border-radius: 10px;
+        padding: 10px 15px;
+    }
+
+    .boton-info {
         background-color: #fff;
         color: #1e1e1e;
         border-radius: 10px;
-        padding:  10px 15px;
+        padding: 10px 15px;
     }
 
     .footer {
@@ -262,3 +263,20 @@ const products = [
         display: flex;
         gap: 10px;
     }
+
+    .hero-section-img {
+        min-width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+
+    .hero-section-img img {
+        width: 100%;
+        object-fit: cover;
+        max-width: none;
+        height: auto;
+    }
+</style>
